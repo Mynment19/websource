@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        웹에서 사용할 수 있는 이미지 형식
+        gif : 움직이는 이미지, 색상 256개만 사용 가능
+        jpg : 사진 저장, gif보다 다양한 색상, 명암 표현 가능
+        png : 최근 가장 많이 사용
+     -->
+
+    <!-- 로컬에서 이미지를 가지고 있는 경우 -->
+    <!-- src : 이미지 경로, alt : 이미지가 안 보일 때 대체할 텍스트
+        width, height : 이미지 크기 지정이 가능하나 css로 처리해야 함 (단위 픽셀)
+        이미지 경로 : 상대경로, 절대경로
+        상대경로 : . or ../img/특정파일
+        절대경로 : c:/windows/img/특정파일
+    -->
+    <!-- 내가 가지고 있는 이미지 : 상대경로 -->
+    <img src="img/cat.jpg" alt="고양이" width="300" height="200" />
+
+    <!-- 웹 상의 이미지를 가지고 올 경우 : 절대경로-->
+    <img
+      src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3492868%2F34928689983.jpg&type=f372_372"
+      alt="IPhone 14 PRO"
+    />
+  </body>
+</html>

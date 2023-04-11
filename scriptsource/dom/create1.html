@@ -21,7 +21,13 @@
         const div = document.createElement("div");
         const content2 = document.createTextNode("Hi there and greetings!");
         div.appendChild(content2);
-        document.body.appendChild(content2);
+        //document.body.appendChild(content2);
+
+        // div 태그 찾아오기
+        const currentDiv = document.querySelector("div");
+        console.log(currentDiv);
+
+        document.body.insertBefore(div, currentDiv);
       };
     </script>
   </body>

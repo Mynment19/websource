@@ -9,27 +9,33 @@
       :root {
         font-size: 12px;
       }
+
       body {
         font-size: 18px;
       }
+
       h1 {
-        font-size: 1.5em;
+        /* font-size: 1.5em;  16px * 1.5 */
+        font-size: 1.5rem; /* 12px * 1.5 */
       }
       h2 {
-        font-size: 1.2em;
+        /* font-size: 1.2em;  16px * 1.2 */
+        font-size: 1.2rem;
       }
       p {
         /* width: 800px; */
         width: 80%;
-        font-size: 1em;
+        /* font-size: 1em; /* 16px * 1 */
+        font-size: 1rem;
       }
       p span {
-        font-size: 0.8em;
+        font-size: 0.8em; /* 16px * 0.8 */
       }
+
       .box {
         float: left;
         margin-right: 20px;
-        background-color: blue;
+        background: blue;
         color: #fff;
         text-align: center;
       }
@@ -38,32 +44,33 @@
         height: 160px;
       }
       .box_em {
-        width: 10em;
+        width: 10em; /* body 폰트 크기 * 10em */
         height: 10em;
       }
       .box_rem {
-        width: 10rem;
+        width: 10rem; /* :root 폰트 크기 * 10rem */
         height: 10rem;
       }
     </style>
   </head>
   <body>
-    <!-- 
-        크기 단위 : px, %, em, rem
+    <!--
+        크기 단위 : px, %, em, rem 
         1) px : 고정단위
                 브라우저의 크기를 줄이면 스크롤이 발생
         2) % : 상대단위
         3) em : em 단위가 쓰여진 곳의 폰트 사이즈 배수
-
-     -->
+        4) rem : 문서 기본값의 배수
+    -->
     <h1>css 기본 단위</h1>
     <h2>단위</h2>
-
     <p>
-      <span>Lorem ipsum</span> dolor sit amet consectetur, adipisicing elit.
-      Necessitatibus assumenda repudiandae, alias, vitae molestias veniam omnis
-      explicabo aliquam itaque consequuntur aliquid eum autem minus ducimus,
-      laboriosam laudantium repellat sequi quos.
+      <span>Lorem ipsum</span> dolor sit amet consectetur adipisicing elit.
+      Officia id dolore enim veritatis in, repellat quis reprehenderit, ipsa,
+      tempore necessitatibus a vitae mollitia. Quibusdam, nostrum hic. Amet
+      minima officiis odit, maxime quos vel quasi iure corrupti unde incidunt
+      voluptatibus, ex laborum voluptatum, eligendi soluta aliquid! Quos ducimus
+      ipsum praesentium tenetur?
     </p>
     <div class="wrapper">
       <div class="box box_px">PX</div>

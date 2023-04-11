@@ -10,16 +10,67 @@
       * {
         box-sizing: border-box;
       }
-      /* body : font-family : Open Sans, 배경색 : #ecf0f1 */
+      /* body: font-family : Open Sans, 배경색:#ecf0f1 */
       body {
         font-family: "Open Sans";
-        background-color: #ecf0f1;
+        background: #ecf0f1;
       }
+
       /* wrapper : width : 100%, margin : 상하 2rem 좌우 가운데, max-width : 60rem */
       .wrapper {
         width: 100%;
         margin: 2rem auto;
         max-width: 60rem;
+      }
+
+      .flexbg {
+        display: flex;
+      }
+
+      .flexbg main {
+        order: 2;
+        width: 60%;
+        padding: 1.618rem;
+      }
+
+      .flexbg .sidebar {
+        color: white;
+        width: 20%;
+        padding: 1.618rem;
+      }
+
+      .flexbg .left {
+        order: 1;
+        background: #3498db;
+      }
+      .flexbg .right {
+        order: 3;
+        background: #34495e;
+      }
+
+      /* 최대 768px */
+      @media screen and (max-width: 768px) {
+        /* flex-wrap:wrap */
+        .flexbg {
+          flex-wrap: wrap;
+        }
+        .flexbg main {
+          order: 1;
+          width: 100%;
+        }
+        .flexbg .sidebar {
+          width: 50%;
+        }
+        .flexbg .left {
+          order: 2;
+        }
+      }
+
+      /* 최대 480px */
+      @media screen and (max-width: 480px) {
+        .flexbg .sidebar {
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -27,30 +78,34 @@
     <div class="wrapper flexbg">
       <main>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam, sunt?
-          Minima, quibusdam quasi mollitia consequatur odio maiores repellendus
-          inventore voluptatum molestiae! Accusantium doloremque molestiae dicta
-          consequatur, iste deleniti labore officia!
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, quis
+          modi accusamus exercitationem officiis nihil facere nisi iure eaque
+          inventore vero impedit doloremque cumque culpa ipsum quam quo rem
+          suscipit aut! Veniam facilis nostrum tempore nisi alias accusantium
+          illum quia voluptas iusto. In iste labore, modi deserunt nisi magnam
+          dignissimos?
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam, sunt?
-          Minima, quibusdam quasi mollitia consequatur odio maiores repellendus
-          inventore voluptatum molestiae! Accusantium doloremque molestiae dicta
-          consequatur, iste deleniti labore officia!
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, quis
+          modi accusamus exercitationem officiis nihil facere nisi iure eaque
+          inventore vero impedit doloremque cumque culpa ipsum quam quo rem
+          suscipit aut! Veniam facilis nostrum tempore nisi alias accusantium
+          illum quia voluptas iusto. In iste labore, modi deserunt nisi magnam
+          dignissimos?
         </p>
-        <aside class="sidebar left">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam veniam
-          saepe vero rerum adipisci ducimus quae, animi, nostrum iste expedita
-          quam? Incidunt esse enim pariatur soluta. Eveniet, doloremque maxime?
-          Debitis!
-        </aside>
-        <aside class="sidebar right">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nisi
-          aliquid dicta! Ab ducimus assumenda totam alias, nostrum
-          necessitatibus quia facere aliquid minima provident molestias
-          voluptatibus voluptatum saepe quae magnam.
-        </aside>
       </main>
+      <aside class="sidebar left">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo corporis
+        nostrum doloribus obcaecati maxime tenetur dicta perferendis! Cum qui,
+        aliquam nulla assumenda fuga ea totam doloribus quo dolorem eius
+        aperiam!
+      </aside>
+      <aside class="sidebar right">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo corporis
+        nostrum doloribus obcaecati maxime tenetur dicta perferendis! Cum qui,
+        aliquam nulla assumenda fuga ea totam doloribus quo dolorem eius
+        aperiam!
+      </aside>
     </div>
   </body>
 </html>

@@ -8,7 +8,7 @@
     <style>
       .container {
         display: flex;
-        flex-wrap: no-wrap;
+        /* flex-wrap: wrap; */
       }
       .container .item {
         width: 200px;
@@ -38,19 +38,20 @@
     </style>
   </head>
   <body>
-    <!-- 
+    <!--
         flex : 배치되어야 할 요소들을 플렉스 컨테이너로 묶어야 함
-        display : flex;
-        flex-direction : row(default) | row-reverse | column | column-reverse; 배치방향
-        flex-wrap : wrap; no-wrap(default), wrap(여러 줄), wrap - reverse;
+        display:flex; 
+        flex-direction: row(기본) | row-reverse | column | column-reverse; 배치방향
+        flex-wrap: wrap;  no-wrap(기본), wrap(여러 줄), wrap-reverse
+          no-wrap : 한 줄에 표시
         order : 배치 순서 변경
 
 
         수직 => 수평
-        1. display : inline-block;
-        2. float : left or right;
+        1. diplay:inline-block;
+        2. float:left or right;
         3. flex
-     -->
+    -->
     <div class="container">
       <div class="item">A</div>
       <div class="item">B</div>

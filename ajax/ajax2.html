@@ -39,14 +39,6 @@
       // 동기식 : 서버와 통신할 때 전체 페이지를 refresh 하는 방식 (검색, 화면전환 등)
       // 비동기식 : 서버와 통신하기 위해 데이터만 주고 받는 방식 (주식 등)
 
-      // XML : 데이터 정의하고 저장
-      //       웹사이트 자료 공유하기 편함
-      //       사용자 정의 태그
-
-      // JSON : 데이터 정의하고 저장
-      //        텍스트 기반 방식(쉽게 작성, 가볍다)
-      //        자바스크립트 객체 정의하는 방식과 같음
-
       // ajax 구현
       // 1. 자바스크립트 XMLHttpRequest 객체 사용하기(어렵다, 코드의 양이 많다)
       // 2. fetch api 사용
@@ -56,21 +48,14 @@
       //     .then((response) => response.json()) // 가져온 데이터를 원하는 형태로 변경(파싱)
       //     .then((data) => console.log(data));
 
-      // response.json() : json 응답을 자바스크립트 객체로 파싱
-      // JSON.stringify(data) : 자바 스크립트 객체를 json 형태로 변경
-
-      // 메뉴1 클릭하면
-      // data.html 가져와서 화면에 보여주기(refresh 없이)
-      const li = document.querySelector(".container > li:first-child");
+      // 메뉴2 클릭하면
+      // hello.txt 가져와서 화면에 보여주기(refresh 없이)
+      const li = document.querySelector(".container  li:nth-child(2)");
 
       li.addEventListener("click", () => {
-        fetch("https://Mynment19.github.io/data/data.html")
+        fetch("https://mynment19.github.io/data/hello.txt")
           .then((response) => response.text())
-          .then((data) => {
-            console.log(data);
-            // body 안의 div 태그에 보여주기
-            document.querySelector("div").innerHTML = data;
-          });
+          .then((data) => (document.querySelector("div").innerHTML = data));
       });
     </script>
   </body>

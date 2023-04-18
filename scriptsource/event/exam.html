@@ -13,16 +13,18 @@
     <button type="button" id="turn-on">Turn on the light</button>
     <img src="../image/pic_bulboff.gif" alt="" />
     <button type="button" id="turn-off">Turn off the light</button>
+
     <p id="p1">This is a paragraph.</p>
     <input type="button" value="요소 숨김" id="hidden" />
     <input type="button" value="요소 보이기" id="visible" />
     <script>
-      // 버튼 클릭 시 p 태그 안의 내용 변경 : Hello JavaScript
+      //버튼 클릭 시 p 태그 안의 내용 변경 Hello JavaScript
       const btn = document.querySelector("button");
       btn.addEventListener("click", () => {
         document.getElementById("demo").innerHTML = "Hello JavaScript";
       });
-      // turn-on 버튼 클릭 시 img src를 pic_bulbon.gif로 변경
+      // turn-on 버튼 클릭 시 img src 를 pic_bulbon.gif 변경
+      // turn-off 버튼 클릭 시 img src 를 pic_bulboff.gif 변경
       const turnOn = document.querySelector("#turn-on");
       const turnOff = document.querySelector("#turn-off");
       const img = document.querySelector("img");
@@ -30,7 +32,6 @@
         "click",
         () => (img.src = "../image/pic_bulbon.gif")
       );
-      // turn-off 버튼 클릭 시 img src를 pic_bulboff.gif로 변경
       turnOff.addEventListener(
         "click",
         () => (img.src = "../image/pic_bulboff.gif")

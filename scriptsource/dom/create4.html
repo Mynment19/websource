@@ -17,8 +17,8 @@
       <p>This is as fancy as we'll get!</p>
     </div>
     <p>
-      IDs (such as <span class="code">#content</span>) can be used on many
-      elements
+      IDs (such as <span class="code">#content</span>) are unique (there can
+      only be one per page)
     </p>
     <p>
       Classes (such as <span class="code">.callout</span>) can be used on many
@@ -27,13 +27,28 @@
     <div id="callout2" class="callout fancy">
       <p>A single HTML element can have multiple classes.</p>
     </div>
-
     <script>
       // 두 개의 p를 생성한다.
       // <p>I was created dynamically</p>
-      // <p>I was also created dynamically!</p>
+      // <p>I was also created dynamically!!</p>
+      const p1 = document.createElement("p");
+      //   const p1Content = document.createTextNode("I was created dynamically");
+      //   p1.appendChild(p1Content);
+      p1.innerText = "I was created dynamically";
 
-      // cont/ent의 현재 자식을 기준으로 하나는 앞 쪽에 하나는 뒤에 삽입
+      const p2 = document.createElement("p");
+      //   const p2Content = document.createTextNode(
+      //     "I was also created dynamically!!"
+      //   );
+      //   p2.appendChild(p2Content);
+      p2.innerText = "I was also created dynamically!!";
+
+      // content 의 현재 자식을 기준으로 하나는 앞 쪽에 하나는 뒤에 삽입
+      const content = document.getElementById("content"); // document.querySelector("#content")
+      const current = document.querySelector("#content > p");
+
+      content.insertBefore(p1, current);
+      content.appendChild(p2);
     </script>
   </body>
 </html>

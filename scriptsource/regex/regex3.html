@@ -5,34 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      span {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
   </head>
-  <style>
-    span {
-      color: red;
-      font-size: 14px;
-    }
-  </style>
   <body>
     <form action="">
       <div>
-        <label for="name">
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="이름"
-            maxlength="4"
-          />
-        </label>
-        <div>
-          <label for="name">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="email"
-            />
-          </label>
+        <label for="name">이름</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="이름"
+          maxlength="4"
+        />
+      </div>
+      <div>
+        <label for="name">이메일</label>
+        <input type="email" name="email" id="email" placeholder="email" />
       </div>
       <div>
         <label for="tel">전화번호</label>
@@ -40,7 +34,7 @@
           type="text"
           name="tel"
           id="tel"
-          placeholder="-를 제외한 숫자를 입력해주세요"
+          placeholder="-를 제외한 숫자를 입력해 주세요"
         />
         <span id="result"></span>
       </div>
@@ -50,47 +44,51 @@
     </form>
     <script>
       // abc123@naver.com
+      // a@abc.com
 
       const email = /\S+@\S+\.\S+/;
+      // 값이 비어 있거나 패턴에 맞는지 확인
       document.querySelector("#email").addEventListener("change", (e) => {
-        // 값이 비어있거나 패턴에 맞는지
-        if(!email.test(e.target.value)||e.target.value == ""){
-          alert("이메일을 입력하세요");
+        if (e.target.value == "" || !email.test(e.target.value)) {
+          alert("이메일을 확인해 주세요");
+          //e.target.focus();
           e.target.select();
-        }        
-      })
+        }
+      });
 
-      // [(ㄱ - ㅎ) | (ㅏ - ㅣ) | (가 - 힣)];
+      //   [(ㄱ - ㅎ) | (ㅏ - ㅣ) | (가 - 힣)];
 
       // 이름에 한글이 입력되었는지 확인
       const regex = /^[가-힣]{2,4}$/;
       document.querySelector("#name").addEventListener("change", (e) => {
         if (!regex.test(e.target.value)) {
-          alert("이름을 확인해주세요");
-          // e.target.focus();
+          alert("이름을 확인해 주세요");
+          //e.target.focus();
           e.target.select();
         }
       });
 
       const re = /^\d{3}\d{4}\d{4}$/;
 
-      // // 확인 버튼을 클릭하면 사용자가 입력한 전화번호를 가지고 오기
-      // document.querySelector("button").addEventListener("click", () => {
-      //   const tel = document.getElementById("tel").value;
-      //   // 전화번호와 규칙이 일치하는지 확인 후 메세지 보여주기
-      //   if (!re.test(tel)) {
-      //     document.querySelector("#result").innerHTML =
-      //       "-를 제외한 숫자를 입력해주세요.";
-      //   }
-      // });
+      // 확인 버튼을 클릭하면 사용자가 입력한 전화번호를 가지고 오기
+      //   document.querySelector("button").addEventListener("click", () => {
+      //     const tel = document.getElementById("tel").value;
+      //     // 전화번호와 규칙이 일치하는지 확인한 후 메세지 보여주기
+
+      //     if (!re.test(tel)) {
+      //       document.querySelector("#result").innerHTML =
+      //         "-를 제외한 숫자를 입력해 주세요";
+      //     }
+      //   });
 
       // 전화번호 입력이 끝나면 정규식 패턴 확인
       document.getElementById("tel").addEventListener("change", (e) => {
         const tel = e.target.value;
+        // 전화번호와 규칙이 일치하는지 확인한 후 메세지 보여주기
 
         if (!re.test(tel)) {
           document.querySelector("#result").innerHTML =
-            "-를 제외한 숫자를 입력해주세요.";
+            "-를 제외한 숫자를 입력해 주세요";
         } else {
           document.querySelector("#result").innerHTML = "";
         }

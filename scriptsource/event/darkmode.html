@@ -23,38 +23,40 @@
       } */
     </style>
   </head>
-  <body class="bg-dark">
+  <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <span class="navbar-brand">JSShop</span>
-        <span class="badge bg-dark">Light 🔄</span>
+        <span class="badge bg-dark">Dark 🔄</span>
       </div>
     </nav>
     <script>
-      // Dark 🔄 버튼 클릭하면 문서의 배경색을 검정으로 변경, 버튼의 텍스트를 Light 🔄 로 변경
-      // Light 🔄 버튼 클릭하면 문서의 배경색을 흰색으로 변경, 버튼의 텍스트를 Dark 🔄 로 변경
+      // Dark 버튼 클릭하면 문서의 배경색이 검정, Light 🔄 변경
+      // Light 버튼 클릭하면 문서 배경색 흰색, Dark 🔄 변경
 
       // bg-dark 클래스명을 부착했다가 떼었다가
-      // 이벤트대상
+
+      //이벤트 대상
       const badge = document.querySelector(".badge");
-      // 변화를 줄 요소
+      //변화를 줄 요소
       const body = document.querySelector("body");
 
       let mode = true;
 
       function modeChange() {
         if (mode) {
-          // 배경색이 흰색일 때
+          //배경색이 흰색일 때
           body.classList.add("bg-dark");
           badge.innerHTML = "Light 🔄";
           mode = false;
         } else {
-          // 배경색이 검정색일 때
+          //배경색이 검정색일 때 흰색으로 가기 위해
           body.classList.remove("bg-dark");
           badge.innerHTML = "Dark 🔄";
           mode = true;
         }
       }
+
       badge.addEventListener("click", modeChange);
     </script>
   </body>

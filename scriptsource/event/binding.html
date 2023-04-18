@@ -11,15 +11,14 @@
       <div class="card">상품명 / 가격</div>
       <div class="name"></div>
       <div class="price"></div>
-      <div class="color"></div>
     </div>
     <script>
-      // 상품 상세 페이지
-      // 배열 : ["소나타",50000,"white"]
-      // object : {name:"소나타", price:50000, color:"white"}
+      //상품 상세 페이지
+      //배열 : ["소나타",50000,"white"]
+      //object : {name:"소나타", price:50000, color:"white"}
 
       const car = ["소나타", 50000, "white"];
-      // name과 price 값 바인딩 시키기
+      //name 과 price 값 바인딩 시키기
       document.querySelector(".name").innerHTML = car[0];
       document.querySelector(".price").innerHTML = car[1];
 
@@ -32,6 +31,7 @@
         price: [60000, 70000, 80000],
         color: "white",
       };
+
       document.querySelector(".name").innerHTML = car3["name"];
       document.querySelector(".price").innerHTML = car3.price[1];
     </script>

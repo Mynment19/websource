@@ -28,7 +28,7 @@
       <button type="button">정답 확인</button>
     </div>
     <div>
-      <label for="count">추측 횟수</label>
+      <label for="count">추측횟수</label>
       <input type="text" name="count" id="count" size="5" readonly />
     </div>
     <div>
@@ -36,13 +36,14 @@
       <input type="text" name="hint" id="hint" size="30" readonly />
     </div>
     <script>
-      // 임의의 숫자 생성 (1~100)
+      // 임의의 숫자 생성 (1 ~ 100)
       const random = Math.floor(Math.random() * 100) + 1;
-      // 추측횟수 변수
+
+      //추측횟수 변수
       let nGuess = 0;
 
       // 정답 확인 클릭 시
-      const btn = document.querySelector("[type = 'button']");
+      const btn = document.querySelector("[type='button']");
       btn.addEventListener("click", () => {
         // 사용자 입력 값 가져오기
         let inputNum = parseInt(document.querySelector("#num1").value);
@@ -50,18 +51,20 @@
         // 추측횟수 +1 화면에 보여주기
         nGuess++;
         document.querySelector("#count").value = nGuess;
-        // 입력값과 컴퓨터 생성 값 비교를 한 후
-        let result = "";
+
+        // 입력값과 컴퓨터 생성 값 비교를 한후
         // 정확합니다, 추측값이 적습니다, 추측값이 많습니다를 힌트에 보여주기
+        let result = "";
         if (inputNum < random) {
           result = "추측값이 적습니다.";
         } else if (inputNum > random) {
           result = "추측값이 많습니다.";
         } else if (inputNum == random) {
-          // 정답을 구하면 더 이상 버튼은 못누르게하기
           result = "정확합니다.";
+          // 정답을 구했으면 더 이상 버튼은 못누르게 하기
           btn.disabled = "true";
         }
+
         document.querySelector("#hint").value = result;
       });
     </script>

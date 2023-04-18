@@ -16,7 +16,6 @@
         height: 50px;
         justify-content: center;
         align-items: center;
-        text-align: center;
       }
       .container li {
         margin: 0 10px;
@@ -26,6 +25,7 @@
       div {
         margin: 20px;
       }
+
       table,
       td {
         border: 1px solid black;
@@ -43,34 +43,33 @@
 
     <script>
       // ajax(Asynchronous JavaScript and XML)
-      // 동기식 : 서버와 통신할 때 전체 페이지를 refresh 하는 방식 (검색, 화면전환 등)
-      // 비동기식 : 서버와 통신하기 위해 데이터만 주고 받는 방식 (주식 등)
+      // 동기식 : 서버와 통신할 때 전체 페이지를 리프레시 하는 방식
+      // 비동기식 : 서버와 통신하기 위해 데이터만 주고 받는 방식
 
       // ajax 구현
-      // 1. 자바스크립트 XMLHttpRequest 객체 사용하기(어렵다, 코드의 양이 많다)
+      // 1. 자바스크립트 XMLHttpRequest 객체 사용하기(==> 어렵다, 코드의 양이 많음)
       // 2. fetch api 사용
-      // 3. axios(node.js)
+      // 3. axios 사용(node.js)
 
       //   fetch("데이터를 가져올 서버 주소")
-      //     .then((response) => response.json()) // 가져온 데이터를 원하는 형태로 변경(파싱)
-      //     .then((data) => console.log(data));
+      //     .then((response) => response.json()) //가져온 데이터를 원하는 형태로 변경(파싱)
+      //     .then((data) => console.log(data));  //변경된 데이터를 사용
 
       // response.json() : json 응답을 자바스크립트 객체로 파싱
-      // JSON.stringify(data) : 자바 스크립트 객체를 json 형태로 변경
+      // JSON.stringify(data) : 자바스크립트 객체를 json 으로 변경
 
-      // 메뉴2 클릭하면
-      // version.json 가져와서 화면에 보여주기(refresh 없이)
-      const li = document.querySelector(".container  li:nth-child(2)");
+      // 메뉴 2 클릭하면
+      // school.xml 가져와서 화면에 보여주기(refresh 없이)
+      const li = document.querySelector(".container li:nth-child(2)");
 
       const div = document.querySelector("div");
 
       li.addEventListener("click", () => {
-        fetch("https://Mynment19.github.io/data/company.xml")
+        fetch("https://jinkyungpark.github.io/data/company.xml")
           .then((response) => {
             if (!response.ok) {
               throw new Error("데이터가 없습니다.");
             }
-
             return response.text();
           })
           .then((data) => {
@@ -81,7 +80,7 @@
             const members = xml.querySelectorAll("member");
 
             let result = "<ul>";
-            //foreach
+            // forEach
             members.forEach((item) => {
               result +=
                 "<li>name : " +
